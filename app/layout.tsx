@@ -5,6 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
+import { siteConfig } from "@/lib/site-config";
 
 const GA_MEASUREMENT_ID = "G-R3CNVRGQTX";
 
@@ -19,9 +20,25 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
+// Ties Proper Treat to Incyworks, the studio that builds it, so search
+// engines can connect the two (Incyworks findability spec v1 §13).
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/apple-touch-icon.png`,
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Incyworks Ltd",
+    url: "https://www.incyworks.com/",
+  },
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Proper Treat — Gift vouchers your customers will actually want to give",
+    default: siteConfig.defaultTitle,
     template: "%s — Proper Treat",
   },
   description:
@@ -47,6 +64,10 @@ export default function RootLayout({
       className={`${fraunces.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"

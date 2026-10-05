@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import QrCode2Icon from "@mui/icons-material/QrCode2";
 import PaletteIcon from "@mui/icons-material/Palette";
@@ -10,6 +11,13 @@ import { TemplateGrid } from "@/components/template-grid";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { CtaSection } from "@/components/cta-section";
 import { siteConfig } from "@/lib/site-config";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = pageMetadata({
+  description:
+    "Proper Treat helps independent cafés, salons and experience businesses sell beautifully designed digital gift vouchers with QR-code redemption.",
+  path: "/",
+});
 
 const steps = [
   {

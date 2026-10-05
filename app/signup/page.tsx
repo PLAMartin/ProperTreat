@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
 import { AuthForm } from "@/components/auth-form";
+import { NO_INDEX } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Sign up" };
+export const metadata: Metadata = { title: "Sign up", robots: NO_INDEX };
 
 export default function SignupPage() {
   return (

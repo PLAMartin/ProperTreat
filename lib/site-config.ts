@@ -1,6 +1,9 @@
 export const siteConfig = {
   name: "Proper Treat",
+  /** Canonical origin. The bare domain redirects here (next.config.ts). */
+  url: "https://www.propertreat.com",
   tagline: "Made for independent businesses",
+  defaultTitle: "Proper Treat — Gift vouchers your customers will actually want to give",
   contactEmail: "phil@propertreat.com",
   takeRate: "5%",
 };

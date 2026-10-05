@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Privacy Policy" };
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy Policy",
+  description:
+    "How Proper Treat collects, uses and protects personal information.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

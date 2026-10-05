@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
 import { CtaSection } from "@/components/cta-section";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = pageMetadata({
+  title: "About",
+  description:
+    "Proper Treat is built in Bath for independent cafés, restaurants, salons and experience businesses that want gift vouchers to feel like a real gift.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

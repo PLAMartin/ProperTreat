@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
 import { PricingCard } from "@/components/pricing-card";
 import { FaqAccordion } from "@/components/faq-accordion";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Pricing" };
+export const metadata: Metadata = pageMetadata({
+  title: "Pricing",
+  description:
+    "One simple plan for Proper Treat gift vouchers: no monthly fee and no setup cost. You only pay when you sell.",
+  path: "/pricing",
+});
 
 const faqs = [
   {

@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
 import { TemplateGrid } from "@/components/template-grid";
 import { CtaSection } from "@/components/cta-section";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Templates" };
+export const metadata: Metadata = pageMetadata({
+  title: "Templates",
+  description:
+    "Proper Treat voucher templates start with artwork that feels like a gift, not a receipt, with your branding on every design.",
+  path: "/templates",
+});
 
 export default function TemplatesPage() {
   return (

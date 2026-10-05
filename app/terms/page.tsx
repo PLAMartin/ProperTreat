@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Terms of Service" };
+export const metadata: Metadata = pageMetadata({
+  title: "Terms of Service",
+  description:
+    "The terms that apply when you use Proper Treat.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

@@ -3,8 +3,14 @@ import QrCode2Icon from "@mui/icons-material/QrCode2";
 import { PageHeader } from "@/components/page-header";
 import { StepSequence } from "@/components/step-sequence";
 import { CtaSection } from "@/components/cta-section";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "How it works" };
+export const metadata: Metadata = pageMetadata({
+  title: "How it works",
+  description:
+    "What happens from the moment someone buys a Proper Treat gift voucher to the moment you scan and redeem it in-store.",
+  path: "/how-it-works",
+});
 
 const steps = [
   {

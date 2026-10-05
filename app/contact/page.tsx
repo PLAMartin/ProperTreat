@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/page-header";
 import { ContactForm } from "@/components/contact-form";
 import { siteConfig } from "@/lib/site-config";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = pageMetadata({
+  title: "Contact",
+  description:
+    "Questions before you sign up, or need a hand with something? Get in touch with Proper Treat.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
