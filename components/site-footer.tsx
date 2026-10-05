@@ -37,7 +37,11 @@ export function SiteFooter() {
 
         <div className="mt-10 flex flex-col-reverse items-center gap-4 border-t border-border/70 pt-6 sm:flex-row sm:justify-between">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. A product of{" "}
+            <a href="https://www.incyworks.com/" className="underline transition-colors hover:text-primary">
+              Incyworks
+            </a>
+            , an independent software product studio in Bath.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
